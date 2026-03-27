@@ -2,10 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
 from openai import OpenAI
-
 app = Flask(__name__)
-CORS(app)
-
+CORS(app)  # ✅ 加上这一行
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 quota = 5
