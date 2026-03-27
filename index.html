@@ -29,9 +29,9 @@ h2 { text-align:center; margin-bottom:20px; color:#d63384; }
 </div>
 
 <script>
-const API = "https://xiaohongshu-ai.onrender.com";
+const API = "https://xiaohongshu-ai.onrender.com"; // ✅ 替换成你的 Render 地址
 
-let quota = 5; // 初始显示额度
+let quota = 5;
 
 const generateBtn = document.getElementById('generate');
 const resultDiv = document.getElementById('result');
@@ -57,7 +57,7 @@ async function generateContent(){
         const json = await res.json();
         if(json.error){ alert(json.error); return; }
 
-        const items = json.text.split("\n").filter(t=>t.trim()!==""); // 简单分行
+        const items = json.text.split("\n").filter(t=>t.trim()!=="");
         resultDiv.innerHTML = items.map((item,i)=>`
             <div class="card">
                 <div class="card-body">
